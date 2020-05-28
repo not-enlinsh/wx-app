@@ -1,0 +1,42 @@
+<view class="weui-search-bar {{extClass}}">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="12"></icon>
+            <input type="text" id="searchz1" class="weui-search-bar__input" placeholder="{{placeholder}}" value="{{value}}" focus="{{focus}}" bindblur="inputBlur" bindfocus="inputFocus" bindinput="inputChange" />
+            <view class="weui-icon-clear" wx:if="{{value.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="12"></icon>
+            </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{searchState}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="12"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+        </label>
+    </view>
+    <view wx:if="{{cancel && searchState}}" class="weui-search-bar__cancel-btn" bindtap="hideInput">{{cancelText}}</view>
+</view>
+<view class="cover">
+
+  <view class="h-box" wx:if="{{ls}}">
+    <view class="t1">
+      <view class="title-box">历史记录</view>
+      <view class="c-c-1">
+        <view class="list" bindtap="tosss" data-value="迪士尼">迪士尼</view>
+        <view class="list" bindtap="tosss" data-value="东方明珠">东方明珠</view>
+      </view>
+    </view>
+  </view>
+  
+<view class="c-c-2" data-index="{{index}}" wx:for="{{result}}">
+  <view class="list"  bindtap="toDetails" data-id="{{item.goods_id}}">
+    <view class="img"><image src="{{host+item.original_img}}" mode="aspectFit"></image></view>
+    <view class="r">
+      <view class="t1">{{item.goods_name}} ({{item.goods_remark}})</view>
+      <view class="t2">
+        <view class="jg">¥{{item.shop_price}}<text>起</text></view>
+        <!-- <view class="yj"><text>原价</text>¥38</view> -->
+        <!-- <view class="pf">评分4.8</view> -->
+      </view>
+    </view>
+  </view>
+</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dialog": "../dologin/dologin"
+  },
+  "navigationStyle": "custom"
+}

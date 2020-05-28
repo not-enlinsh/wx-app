@@ -1,0 +1,93 @@
+<!--pages/personalCenter/personalCenter.wxml-->
+<view class="banner">
+  <view class="bg1">
+    <image src="/images/fj.png" class="fj" mode="widthFix"></image>
+    <image src="/images/rqq.png" class="rqq" mode="widthFix"></image>
+    <view>
+      <image src="{{info.head_pic}}" class="img1"></image>
+      <view class="id">
+        <text class="font1">{{info.nickname}}</text>
+        <text>ID: {{info.user_id}}</text>
+      </view>
+    </view>
+    <navigator url="/pages/editUser/editUser" open-type="navigate">
+    <image src="/images/arrowWhite.png" class="img2"></image>
+    </navigator>
+  </view>
+ 
+</view>
+<view class="semicircle">
+  <view class="bg2">
+  </view>
+  <view class="bg3">
+    <view bindtap="toUrl" data-url="/pages/annualCard/annualCard">
+      <image src="/images/center1.png"></image>
+      <text>我的年卡</text>
+    </view>
+     <view bindtap="toUrl" data-url="/pages/myTickets/myTickets">
+      <image src="/images/center6.png"></image>
+      <text>我的门票</text>
+    </view>
+     <view bindtap="toUrl" data-url="/pages/myOrder/myOrder">
+      <image src="/images/center4.png"></image>
+      <text>我的预定</text>
+    </view>
+     <view bindtap="toUrl" data-url="/pages/myComment/myComment">
+      <image src="/images/center5.png"></image>
+      <text>我的评价</text>
+    </view>
+     <view bindtap="toUrl" data-url="/pages/myFavorite/myFavorite">
+      <image src="/images/center2.png"></image>
+      <text>我的收藏</text>
+    </view>
+     <view>
+      <image src="/images/center3.png" bindtap="openm"></image>
+      <text>联系客服</text>
+    </view>
+  </view>
+</view>
+<view class="cover">
+  <view class="bg4" bindtap="togouniank"><image src="/images/centerBtn.png"></image> </view>
+  <view class="bg5">
+    <view class="list"  bindtap="toUrl" data-url="/pages/aboutUs/aboutUs"> 
+      <view class="img1">
+        <image src="/images/aboutUs.png"></image>
+        关于我们
+      </view>
+      <image src="/images/arrowToRight.png" class="img2"></image>
+    </view>
+    <view class="list" bindtap="toUrl" data-url="/pages/familiarQues/famQues"> 
+      <view class="img1">
+        <image src="/images/feedback.png"></image>
+        常见问题
+      </view>
+      <image src="/images/arrowToRight.png" class="img2"></image>
+    </view>
+  </view>
+  <!-- <view class="bg6">
+    <view>
+      <text>为您推荐</text>
+    </view>
+  </view>
+  <view class="bg7">
+  
+  </view> -->
+</view>
+
+
+<view class="tab-bar-box"></view>
+
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="modalBody">
+    <view class="img"><image src="/images/phone.png" mode="widthFix"></image></view>
+    <view class="phone">18012345678</view>
+    <view class="title">客服热线</view>
+  </view>
+  <view class="modalFooter">
+    <view class="backIndex" bindtap="closem">取消</view> 
+    <view class="check" bindtap="freeTell">拨打</view>
+  </view>
+</view>

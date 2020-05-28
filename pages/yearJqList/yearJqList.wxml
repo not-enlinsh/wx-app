@@ -1,0 +1,61 @@
+<!--pages/yearJqList/yearJqList.wxml-->
+<view class="cover">
+  <navigator url="/pages/search/search" open-type="navigate">
+  <view class="s-box-1">
+    <image src="/images/se.png" mode ="widthFix" class="se"></image>上海
+  </view>
+  </navigator>
+
+  <view class="xuabzhe2">
+    <view class="title2">
+      <view class="titleSel2 {{0 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='0'>
+        <text>全部</text>
+        <view class="heng-1"></view>
+      </view>
+      <view class="titleSel2 {{1 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='1'>
+        <text>周边</text>
+        <view class="heng-1"></view>
+      </view>
+      
+      <!-- <view class="titleSel2 {{2 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='2'>
+        <text>国内</text>
+        <view class="heng-1"></view>
+      </view>
+      
+      <view class="titleSel2 {{3 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='3'>
+        <text>境外</text>
+        <view class="heng-1"></view>
+      </view> -->
+    </view>
+    <view  class="c-c-2" hidden="{{currentIndex2 != 0}}">
+      <block wx:for="{{list1}}" wx:key="*this">
+        <view class="list">
+          <view class="img"><image src="{{host+item.original_img}}" mode="aspectFit"></image></view>
+          <view class="r">
+            <view class="t1">{{item.goods_name}} ({{item.goods_remark}})</view>
+            <view class="t2">
+              <view class="jg">¥{{item.shop_price}}<text>起</text></view>
+              <!-- <view class="yj"><text>原价</text>¥38</view> -->
+              <view class="pf">评分4.8</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view  class="c-c-2" hidden="{{currentIndex2 != 1}}">
+      <block wx:for="{{list2}}" wx:key="*this">
+        <view class="list">
+          <view class="img"><image src="{{host+item.original_img}}" mode="aspectFit"></image></view>
+          <view class="r">
+            <view class="t1">{{item.goods_name}} ({{item.goods_remark}})</view>
+            <view class="t2">
+              <view class="jg">¥{{item.shop_price}}<text>起</text></view>
+              <!-- <view class="yj"><text>原价</text>¥38</view> -->
+              <view class="pf">评分4.8</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

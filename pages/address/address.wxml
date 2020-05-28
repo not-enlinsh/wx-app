@@ -1,0 +1,26 @@
+<!--pages/address/address.wxml-->
+<view class="cover">
+  <form bindsubmit="formSubmit">
+  <view class="top-2">
+    <view class="title-box">
+      <view class="l">
+        <view class="name">添加用户</view>
+      </view>
+    </view>
+    <view class="p-box">
+     <view class="i-list">
+      <input placeholder="请输入姓名" name="consignee"></input>
+     </view>
+     <view class="i-list">
+      <input placeholder="手机号" name="mobile"></input>
+     </view>
+     <view class="i-list">
+      <input placeholder="身份证号" name="id_card"></input>
+     </view>
+    </view>
+  </view>
+  <view class="but">
+    <button class="tj" formType="submit">保存</button>
+  </view>
+  </form>
+</view>

@@ -1,0 +1,181 @@
+<!--pages/productDetails/productDetails.wxml-->
+<view class="banner">
+  <swiper autoplay="{{autoplay}}" interval="3000" duration="50" class="swipe_container">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <view class="list">
+          <image src="{{item}}"  mode ="aspectFill" data-id="{{index}}" bindtap="yulan1"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="cover">
+  <view class="top-1">
+    <view class="t1">
+      <view class="l">{{list.goods_name}}{{list.goods_name}}{{list.goods_name}}</view>
+      <navigator url="/pages/productPl/productPl?id={{list.goods_id}}" open-type="navigate">
+      <view class="r">
+        <view class="r1">
+           <block wx:for="{{star}}" wx:key="*this">
+           <image src="/images/star.png" class="star"></image>
+           </block>
+           <block wx:for="{{5-star}}" wx:key="*this">
+            <image src="/images/star1.png" class="star"></image>
+           </block>
+        </view>
+        <view class="r2">{{star}}</view>
+        <view class="r3">查看评论</view>
+      </view>
+      </navigator>
+    </view>
+    <view class="t2">
+      <view class="l">
+        <view class="l1"><image src="/images/icon-time.png" class="i-time" mode="widthFix"></image> 开放时间：{{list.open_time}}</view>
+        <view class="l1"><image src="/images/icon-area.png" class="i-time" mode="widthFix"></image> {{list.address}}</view>
+      </view>
+      <view class="r"><image src="/images/area.png" class="area" bindtap="getLocation"></image></view>
+    </view>
+  </view>
+  
+  <view class="top-2">
+    <view class="title-box">
+    <view class="l">
+      <view class="shu"></view>
+      <view class="name">门票种类</view>
+    </view>
+    </view>
+    <view class="p-box">
+      <view class="title-box-1">
+        <view wx:for="{{list.filter_spec['用户票类型']}}" wx:key="*this" class="titleSel {{item.item_id == d1 ? 'headerLineSel' : ''}}" bindtap='titleClick' data-idx='{{item.item_id}}'>
+          <text>{{item.item}}</text>
+        </view>
+        <!-- <view class="titleSel {{1 == currentIndex ? 'headerLineSel' : ''}}" bindtap='titleClick' data-idx='1'>
+          <text>普通会员</text>
+        </view> -->
+      </view>
+      <view  class="c-c-2" hidden="{{currentIndex != 0}}">
+        <block wx:for="{{list.filter_spec['票类型']}}" wx:key="*this">
+          <view class="list">
+            <view class="l">
+              <view class="c-name">{{item.item}}:</view>
+              <view class="c-jg">￥{{list.spec_goods_price[item.item_id+'_'+d1].price}}</view>
+            </view>
+            <view class="yuyue" bindtap="toyuyue">预约</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="top-2">
+    <view class="title-box">
+      <view class="l">
+        <view class="shu"></view>
+        <view class="name">评论专区 <text>(168条)</text></view>
+      </view>
+      <view class="r">
+        <view>查看全部</view>
+        <image src="/images/to.png"></image>
+      </view>
+    </view>
+    <view class="p-box">
+     <view class="u-p">
+      <view class="u-t1">
+        <view class="img"><image src="{{pinglun.head_pic}}" class="u-h"></image></view>
+        <view class="u-de">
+          <view class="u-t">{{pinglun.username}} <text>{{pinglun.add_time}}</text></view>
+          <view class="">
+            <block wx:for="{{star1}}" wx:key="*this">
+            <image src="/images/star.png" class="star" mode="widthFix"></image>
+            </block>
+            <block wx:for="{{5-star1}}" wx:key="*this">
+              <image src="/images/star1.png" class="star" mode="widthFix"></image>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="u-t2">{{pinglun.content}}</view>
+      <view class="u-t3">
+        <image wx:for="{{pinglun.img}}"  wx:for-index="idx" wx:for-item="img" src="{{img}}"></image>
+        
+      </view>
+     </view>
+    </view>
+  </view>
+  <view class="top-2">
+    <view class="title-box">
+    <view class="l">
+      <view class="shu"></view>
+      <view class="name">游玩攻略 </view>
+    </view>
+    </view>
+    <view class="c-gl-1">
+      <rich-text nodes="{{content}}"></rich-text>
+    </view>
+  </view>
+  <view class="top-2">
+    <view class="title-box">
+    <view class="l">
+      <view class="shu"></view>
+      <view class="name">游玩路线 </view>
+    </view>
+    </view>
+    <view class="c-gl-1">
+      <view>
+      <image src="{{host+list.luxian_img}}"  class="ias-1" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="top-2">
+    <view class="title-box">
+    <view class="l">
+      <view class="shu"></view>
+      <view class="name">景区介绍 </view>
+    </view>
+    </view>
+    <view class="c-gl-1">
+      {{list.goods_remark}}
+    </view>
+  </view>
+  <view class="top-2">
+    <view class="title-box">
+    <view class="l">
+      <view class="shu"></view>
+      <view class="name">温馨提示 </view>
+    </view>
+    </view>
+    <view class="c-gl-1">
+      <rich-text nodes="{{list.tips}}" class="tip"></rich-text>
+    </view>
+  </view>
+  <view class="top-2">
+    <view class="title-box">
+    <view class="l">
+      <view class="shu"></view>
+      <view class="name">相关景区 </view>
+    </view>
+    </view>
+    <view class="c-gl-1">
+      <view  class="c-c-1">
+        <block wx:for="{{list1}}"  wx:if="{{index<6}}" wx:key="*this">
+          <view class="list" bindtap="toDetails" data-id="{{item.goods_id}}">
+            <view>
+              <image src="{{host+item.original_img}}"  mode ="aspectFill" ></image>
+            </view>
+            <view class="title-2">{{item.goods_name}}</view>
+            <view class="jg"><view class="ss">￥{{item.shop_price}}</view>起</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="foot-box">
+  <view class="foot">
+    <view class="list fx" bindtap="tofenxiang"><image src="/images/fx.png"></image> <view>分享</view> </view>
+    <view class="list sc" bindtap="toCollect"><image src="{{collect ? '/images/fullStar.png' : '/images/noStar.png'}}"></image> <view>收藏</view> </view>
+    <view class="list yy" bindtap="toyuyue">立即预约</view>
+  </view>
+</view>

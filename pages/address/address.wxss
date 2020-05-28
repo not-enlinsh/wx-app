@@ -1,0 +1,40 @@
+/* pages/address/address.wxss */
+.top-2{
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 35rpx;
+  margin-top: 25rpx;
+}
+.title-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.p-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.i-list{
+  margin: 12rpx 0;
+  width: 100%;
+}
+.i-list input{
+  width: 100%;
+  line-height: 80rpx;
+  height: 80rpx;
+  border-bottom: 1px solid #ededed;
+}
+button:not([size='mini']).tj{
+  width: 95vw;
+  margin-top: 30rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  background:rgba(59,168,228,1);
+  border-radius:20rpx;
+  padding: 0;
+  color:rgba(254,255,255,1);
+  font-size: 36rpx;
+}

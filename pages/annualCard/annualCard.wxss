@@ -1,0 +1,208 @@
+/* pages/annualCard/annualCard.wxss */
+.font1{
+  height: 50rpx;
+  color: #3d3d3d;
+  font-size: 36rpx;
+  margin: 40rpx 0;
+  letter-spacing: 6rpx;
+  font-weight: bold;
+}
+.bg1{
+  height: 210rpx;
+  color: rgb(252, 252, 252);
+  background:#3BA8E4;
+  border-radius: 12rpx;
+  padding: 35rpx;
+  letter-spacing: 4rpx;
+}
+.bg1 .row1{
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.bg1 .row1 .font2{
+  height: 50rpx;
+  font-size: 36rpx;
+  letter-spacing: 6rpx;
+}
+.bg1 .row1 .font3{
+  height: 40rpx;
+  font-size: 30rpx;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 40rpx;
+}
+.bg1 .row1 .font3 text{
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.bg1 .font4{
+  font-size: 29rpx;
+  height: 60rpx;
+  padding: 10rpx 0;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+.bg1 .font5{ /*有效期*/
+  font-size: 28rpx;
+  padding-top: 30rpx;
+}
+
+/* 年卡使用权限 */
+.bg2{
+  margin-top: 40rpx;
+  position: relative;
+}
+.bg3 .font1,
+.bg2 .font1{
+  margin: 0;
+}
+
+.product-list {
+ box-sizing: border-box;
+}
+
+.choice-bar {
+  position: relative;
+  font-size: 14px;
+}
+.chioce-item {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 80rpx;
+ 
+}
+ 
+.icon-chioce {
+ height: 50rpx;
+ width: 50rpx;
+ padding-top: 20rpx;
+}
+.district-list,.sorting-list,.filter-list {
+  margin-top: 2rpx;
+  position: relative;
+  left: 0;
+  z-index: -1;
+  font-size: 14px;
+}
+.chioce-list-hide {
+  display: none !important;
+}
+.chioce-list-show {
+ /**top: 80rpx;**/
+  animation: slide 500ms;
+}
+ 
+.sorting-item {
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 00rpx;
+  border-bottom: 1rpx solid rgb(214, 214, 214);
+}
+
+/* 第二个下拉菜单 */
+.bg3{
+  position: relative;
+  margin: 30rpx 0 90rpx 0;
+}
+.select_box{
+  position: relative;
+}
+.select{
+  box-sizing: border-box;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select_img{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  transition:transform 0.3s;
+}
+.select_img_rotate{
+  transform:rotate(180deg);
+}
+.option_box{
+  position: relative;
+  top: 20rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
+  transition: height 0.3s;
+}
+.option{
+  height:100rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 20rpx 10rpx;
+}
+.option .row1{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.bg3 .font2{ /*景点名*/
+  color: #333333;
+  font-size: 30rpx;
+}
+.bg3 .font3{ /*待完成*/
+  font-size: 26rpx;
+  color:#F99B00;
+}
+.bg3 .font4{
+  font-size: 24rpx;
+  color:#999999;
+}
+
+/* 没有年卡时 */
+.noHaveCard{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+}
+.noHaveCard .bg4{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40%;
+}
+.noHaveCard .bg4 image{
+  width: 220rpx;
+  height: 239.8rpx;
+}
+.noHaveCard .bg4 text{
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  color: rgb(180, 180, 180);
+
+}
+.noHaveCard .bg5{
+  width: 100%;
+  margin-top: 40%;
+}
+.noHaveCard .bg5 button{
+  width: 100% !important;
+  height: 100rpx;
+  border-radius: 20rpx;
+  background: #3BA8E4;
+  color: #fff;
+  font-size: 38rpx;
+  font-weight: 500;
+  letter-spacing: 4rpx;
+}
+
+
+.content1{
+  font-size: 26rpx;
+  color: #666;
+  line-height: 46rpx;
+}

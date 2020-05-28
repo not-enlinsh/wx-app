@@ -1,0 +1,16 @@
+<!--pages/familiarQues/famQues.wxml-->
+<!-- 常见问题 -->
+ 
+<view class="cover">
+  <view class="bg">
+    <view class="row" wx:for="{{questions}}" wx:key="{{index}}">
+      <view class="ques">
+        {{index+1}}.
+        {{item.title}}
+      </view>
+      <view class="ans">
+         {{item.description}}
+      </view>
+    </view>
+  </view>
+</view>

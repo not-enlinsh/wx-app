@@ -1,0 +1,75 @@
+<!--pages/myOrder/myOrder.wxml-->
+<view class="cover">
+  <view class="tabs">
+    <!-- <view class="tab-box">
+    <view class="tab">
+      <block wx:for="{{['全部预订','预订成功','预订失败']}}" wx:key="id">
+        <view class="tab_item {{currentTabIndex == index? 'selected' : ''}}" bindtap='onTabItemTap' data-index='{{index}}'>
+          {{item}}
+        </view>
+      </block>
+    </view></view> -->
+    <!--endfor tab-->
+    <view class="item_detail">
+    <!-- 第一个 -->
+      <view hidden="{{currentTabIndex != 0}}">
+        <view class="row" wx:for="{{list}}" wx:key="*this" bindtap="toUrl" data-id="{{item.order_id}}">
+          <view class="img">
+            <image src="{{host+item.goods_list[0].original_img}}"></image>
+            <!-- <view>上海</view> -->
+          </view>
+          <view class="col">
+            <view class="bg">
+              <text class="font1">{{item.goods_list[0].goods_name}}</text>
+              <!-- 需要限制字数 -->
+              <!-- <text class="font2">待使用</text> -->
+              <text class="font4">{{item.order_status_desc}}</text>
+            </view>
+            <text class="font3">预定价格： <text>￥{{item.goods_price}}</text>  </text>
+            <text class="font3">预定日期：{{item.confirm_time}}</text>
+          </view>
+        </view>
+        
+      </view>
+      <!-- 第二个 -->
+      <view hidden="{{currentTabIndex != 1}}">
+        <view class="row" wx:for="{{list}}" wx:key="*this">
+          <view class="img">
+            <image src="{{host+item.goods_list[0].original_img}}"></image>
+            <view>上海</view>
+          </view>
+          <view class="col">
+            <view class="bg">
+              <text class="font1">{{item.goods_list[0].goods_name}}</text>
+              <!-- 需要限制字数 -->
+              <!-- <text class="font2">待使用</text> -->
+              <text class="font4">预订成功</text>
+            </view>
+            <text class="font3">预定价格： <text>￥{{item.goods_price}}</text>  </text>
+            <text class="font3">预定日期：{{item.confirm_time}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 第一个 -->
+      <view hidden="{{currentTabIndex != 2}}">
+        <view class="row" wx:for="{{list}}" wx:key="*this">
+          <view class="img">
+            <image src="{{host+item.goods_list[0].original_img}}"></image>
+            <view>上海</view>
+          </view>
+          <view class="col">
+            <view class="bg">
+              <text class="font1">{{item.goods_list[0].goods_name}}</text>
+              <!-- 需要限制字数 -->
+              <!-- <text class="font2">待使用</text> -->
+              <text class="font4">预订成功</text>
+            </view>
+            <text class="font3">预定价格： <text>￥{{item.goods_price}}</text>  </text>
+            <text class="font3">预定日期：{{item.confirm_time}}</text>
+          </view>
+        </view>
+      </view>
+    </view><!--endfor item_detail-->
+  </view><!--endfor tabs-->
+
+</view><!--endfor cover-->

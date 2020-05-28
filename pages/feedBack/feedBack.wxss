@@ -1,0 +1,75 @@
+/* pages/feedBack/feedBack.wxss */
+.font1{
+  font-size: 34rpx;
+  color: #666;
+  /* margin-top: 50rpx; */
+  height: 40rpx;
+
+}
+.bg1{
+  background: #fff;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  height: 400rpx;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bg1 textarea{
+  width: 100%;
+  font-size: 30rpx;
+  border-bottom: 1px solid #f3f3f3;
+} 
+.bg1 view{
+  display: flex;
+  justify-content: flex-end;
+}
+.bg1 view text{ /*剩余字数*/
+  font-size: 30rpx;
+  color: rgb(168, 167, 167);
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30rpx;
+}
+
+.bg2{
+  background: #fff;
+  /* min-height: 170rpx; */
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  padding: 30rpx 10rpx;
+  display: flex;
+  /* align-items: center;
+  justify-content: space-between; */
+}
+.bg2 button{
+  width: 140rpx !important;
+  height: 140rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0 !important;
+  font-weight: 500;
+}
+.bg2 button image{
+  width: 41rpx;
+  height: 34rpx;
+  justify-content: center;
+  align-items: center;
+}
+.bg3{
+  margin-top: 110rpx;
+}
+.bg3 button{ /*提交按钮*/
+  width:100% !important;
+  height:90rpx;
+  background: #3BA8E4;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 20rpx;
+}

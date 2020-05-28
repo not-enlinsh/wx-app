@@ -1,0 +1,56 @@
+<!--pages/myComment/myComment.wxml-->
+<!-- 我的评论 -->
+
+<!-- <view class="cover"> -->
+  <view class="tabs">
+    <view class="tab">
+      <block wx:for="{{['全部评论','有图评论']}}" wx:key="id">
+        <view class="tab_item {{currentTabIndex == index? 'selected' : ''}}" bindtap='onTabItemTap' data-index='{{index}}'>
+          {{item}}
+        </view>
+      </block>
+    </view><!--endfor tab-->
+    <view class="item_detail">
+    <!-- 第一个 -->
+      <view >
+       <view class="row" wx:for="{{list}}" wx:key="*this">
+        <view class="bg1">
+          <image src="{{host+item.head_pic}}"></image>
+          <view>
+            <text>{{item.nickname}}   <text>{{item.add_time}}</text>  </text>
+            <view>
+              <block wx:for="{{item.goods_rank}}" wx:key="*this">
+                <image src="/images/star.png" class="star"></image>
+              </block>
+              <block wx:for="{{5-item.goods_rank}}" wx:key="*this">
+                <image src="/images/star1.png" class="star"></image>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="bg2">
+          <text class="text">{{item.content}}</text>
+          <view class="imglist">
+            <image wx:for="{{item.img}}" wx:for-item="img" src="{{img}}"  wx:for-index="idx"  data-fid="{{index}}"  data-id="{{idx}}" bindtap="opImg"></image>
+          </view>
+          <view>
+            <!-- <button bindtap="showAll" catchtap='selectTap'>
+              <image class='select_img {{show&&"select_img_rotate"}}' src='/images/dropdown.png'></image>
+            </button> -->
+          </view>
+        </view>
+        <navigator url="/pages/productDetails/productDetails?id={{item.goods.goods_id}}" open-type="navigate">
+        <view class="bg3">
+          <text>{{item.goods.goods_name}}</text>
+          <image src="/images/arrowToRight.png"></image>
+        </view>
+        </navigator>
+       </view>
+        
+      </view>  
+    </view><!--endfor item_detail-->
+  </view><!--endfor tabs-->
+
+<!-- </view> -->
+<!--endfor cover-->
+

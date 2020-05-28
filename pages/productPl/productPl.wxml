@@ -1,0 +1,48 @@
+<!--pages/myComment/myComment.wxml-->
+<!-- 我的评论 -->
+
+<!-- <view class="cover"> -->
+  <view class="tabs">
+    <view class="tab">
+      <block wx:for="{{['全部评论','好评','中评','差评' ,'晒图']}}" wx:key="id">
+        <view class="tab_item {{currentTabIndex == index? 'selected' : ''}}" bindtap='onTabItemTap' data-index='{{index}}'>
+          {{item}}
+        </view>
+      </block>
+    </view><!--endfor tab-->
+    <view class="item_detail">
+    <!-- 第一个 -->
+      <view>
+       <view class="row" wx:for="{{list}}" wx:key="*this">
+        <view class="bg1">
+          <image src="{{item.head_pic}}"></image>
+          <view>
+            <text>{{item.nickname}}   <text>{{item.add_time}}</text>  </text>
+            <view>评论星星</view>
+          </view>
+        </view>
+        <view class="bg2">
+          <text class="text">{{item.content}}</text>
+          <view class="imglist">
+            <image wx:for="{{item.img}}" wx:for-item="img" wx:for-index="idx"  src="{{img}}" data-fid="{{index}}"  data-id="{{idx}}" bindtap="opImg"></image>
+          </view>
+          <view>
+            <!-- <button bindtap="showAll" catchtap='selectTap'>
+              <image class='select_img {{show&&"select_img_rotate"}}' src='/images/dropdown.png'></image>
+            </button> -->
+          </view>
+        </view>
+        <!-- <view class="bg3">
+          <text>上海迪士尼乐园</text>
+          <image src="/images/arrowToRight.png"></image>
+        </view> -->
+       </view>
+        
+      </view>  
+      
+    </view><!--endfor item_detail-->
+  </view><!--endfor tabs-->
+
+<!-- </view> -->
+<!--endfor cover-->
+

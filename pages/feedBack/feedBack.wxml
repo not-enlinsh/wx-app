@@ -1,0 +1,39 @@
+<!--pages/feedBack/feedBack.wxml-->
+<view class="cover">
+  <view style="margin-top:30rpx;">
+    <text class="font1">请补充详细问题或意见</text>
+    <view class="bg1">
+      <textarea rows="4" placeholder="请输入不少于10字的描述" id="feedback" maxlength="100" value="{{information}}" bindinput="getDataBindTap"></textarea>
+      <view>
+        <text id="counter">剩余字数 {{lastArea}}/100</text>
+      </view>
+    </view>
+  </view>
+
+  <view style="margin-top:50rpx;">
+    <text class="font1">请提供相关问题的图片或照片</text>
+    <view class="bg2">
+    <!-- /最多只能上传四张照片 -->
+      <button>
+        <image src="/images/camera.png"></image>
+        <text>上传照片</text>
+      </button>
+      <button>
+        <image src="/images/camera.png"></image>
+        <text>上传照片</text>
+      </button>
+      <button>
+        <image src="/images/camera.png"></image>
+        <text>上传照片</text>
+      </button>
+      <button>
+        <image src="/images/camera.png"></image>
+        <text>上传照片</text>
+      </button>
+    </view>
+  </view>
+
+  <view class="bg3">
+    <button>提交</button>
+  </view>
+</view>

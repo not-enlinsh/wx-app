@@ -1,0 +1,6 @@
+/* pages/kslj/kslj.wxss */
+.box{
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 35rpx;
+}

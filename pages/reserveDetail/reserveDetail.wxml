@@ -1,0 +1,31 @@
+<!--pages/reserveDetail/reserveDetail.wxml-->
+<view class="cover">
+  <view class="row">
+    <view class="img">
+      <image src="{{host+list.order_info.order_goods[0].original_img}}"></image>
+      <view>上海</view>
+    </view>
+    <view class="col">
+      <view class="bg">
+        <text class="font1">{{list.order_info.order_goods[0].goods_name}}</text>
+        <!-- 需要限制字数 -->
+        <!-- <text class="font2">待使用</text> -->
+        <text class="font4">{{list.order_info.order_status_detail}}</text>
+      </view>
+      <text class="font3">预定价格： <text>￥{{list.order_info.goods_price}}</text>  </text>
+      <text class="font3">预定日期：{{list.order_info.add_time}}</text>
+    </view>
+  </view>
+  <view class="row2">
+    <view class="font5">订单信息</view>
+    <view class="font3">订单编号：{{list.order_info.order_sn}}</view>
+    <view class="font3">手机号码：{{list.order_info.mobile}}</view>
+    <view class="font3">付款时间：{{list.order_info.pay_time}}</view>
+    <view class="font3">付款状态：{{list.order_info.order_status_detail}}</view>
+    <view class="font3">预定时间：{{list.order_info.add_time}}</view>
+    <view class="font3">支付金额：<text>￥{{list.order_info.goods_price}}</text> </view>
+  </view>
+  <navigator wx:if="{{list.order_info.order_status == 2}}" url="/pages/writeComment/writeComment?rec_id={{list.order_info.order_goods[0].rec_id}}&goods_id={{list.order_info.order_goods[0].goods_id}}&order_id={{list.order_info.order_id}}&img={{list.order_info.order_goods[0].original_img}}" open-type="navigate">
+    <view class="pinglun">评论</view>
+  </navigator>
+</view>

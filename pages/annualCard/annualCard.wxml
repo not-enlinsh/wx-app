@@ -1,0 +1,64 @@
+<!--pages/annualCard/annualCard.wxml-->
+<view class="cover" wx:if="{{data != ''}}">
+  <view>
+    <view class="font1">生效中的年卡</view>
+    <view class="bg1">
+      <view class="row1">
+        <view class="font2">年卡</view>
+        <view class="font3">剩余 <text>{{list.end_sum}}</text> 天</view>
+      </view>
+      <view class="font4">适应于所有合作景点</view>
+      <view class="font5">有效期至：{{list.end_time}}</view>
+    </view>
+  </view>
+
+<!-- 年卡使用权限 -->
+  <view class="bg2">
+    <view class="product-list"><!--选择框-->
+      <!--条件选择-->
+      <view class="choice-bar">
+        <view bindtap="opens" data-item="1" class="chioce-item" hover-class="click-once-opaque">
+            <!-- {{start}}起始地 -->
+          <view class="font1">年卡使用权益</view>
+          <!-- <view><image class="icon-chioce" src="{{!isstart?openimg: offimg}}"></image></view> -->
+        </view>
+        <!-- <view class="sorting-list{{!isstart?' chioce-list-hide':' chioce-list-show'}}">
+          123123123
+        </view> -->
+        <view class="content1">年卡可以享受优惠呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦呦！</view>
+      </view>
+    </view>
+  </view>
+
+ <!-- 使用记录  -->
+  <!-- <view class="bg3"> -->
+    <!-- <view class='select_box'>
+      <view class='select' catchtap='selectTap'>
+        <text class='font1'>使用记录</text>
+        <image class='select_img {{show&&"select_img_rotate"}}' src='/images/dropdown.png'></image>
+      </view>
+      <view class='option_box' style='height:{{show?auto:0}}rpx;'>
+        <view class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>
+          <view class="row1">
+            <view class="font2">{{item.scenicSpot}}</view>
+            <view class="font3">{{item.state}}</view>
+          </view>
+          <view class="font4">{{item.time}}</view>
+        </view>
+      </view>
+    </view> -->
+  <!-- </view> -->
+</view>
+
+<view class="cover noHaveCard" wx:else>
+  <view class="bg4">
+    <image src="/images/NoHaveCard.png"></image>
+    <text>您还没有绑定年卡</text>
+  </view>
+  <view class="bg5">
+  
+      <navigator url="/pages/bindingCard/bindingCard" open-type="navigate">
+    <button>去绑定</button>
+    </navigator>
+  </view>
+</view>

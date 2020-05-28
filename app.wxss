@@ -1,0 +1,23 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+
+page{
+  background-color: #F4F6F8;
+  color: #3d3d3d;
+}
+.cover{
+  /* padding: 0 25rpx; */
+  padding: 0 2vw;
+}
+.tab-bar-box{
+  height: 50px;
+}

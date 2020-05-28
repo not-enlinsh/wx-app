@@ -1,0 +1,6 @@
+<!--pages/kslj/kslj.wxml-->
+<view class="cover">
+  <view class="box">
+    <rich-text nodes="{{content}}"></rich-text>
+  </view>
+</view>

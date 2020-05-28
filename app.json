@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/editUser/editUser",
+    "pages/familiarQues/famQues",
+    "pages/feedBack/feedBack",
+    "pages/annualCard/annualCard",
+    "pages/bindingCard/bindingCard",
+    "pages/myTickets/myTickets",
+    "pages/reserveDetail/reserveDetail",
+    "pages/myOrder/myOrder",
+    "pages/myFavorite/myFavorite",
+    "pages/vipSpecific/vipSpecific",
+    "pages/myComment/myComment",
+    "pages/personalCenter/personalCenter",
+    "pages/yearJqList/yearJqList",
+    "pages/tjJqList/tjJqList",
+    "pages/writeComment/writeComment",
+    "pages/map/map",
+    "pages/search/search",
+    "pages/searchbar/searchbar",
+    "pages/daohang/daohang",
+    "pages/productDetails/productDetails",
+    "pages/productPl/productPl",
+    "pages/yuyue/yuyue",
+    "pages/piao/piao",
+    "pages/aboutUs/aboutUs",
+    "pages/address/address",
+    "pages/kslj/kslj",
+    "pages/dologin/dologin"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index1.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/personalCenter/personalCenter",
+        "iconPath": "images/myNow.png",
+        "selectedIconPath": "images/myNow1.png",
+        "text": "接口"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F4F6F8",
+    "navigationBarTitleText": "乐行万家",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance":50
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxcfa30ca8a991f6bd"
+  ],
+  "envVersion": "release",
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

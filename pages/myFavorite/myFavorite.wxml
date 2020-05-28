@@ -1,0 +1,45 @@
+<!--pages/myFavorite/myFavorite.wxml-->
+<view class="cover">
+  <view class="tabs">
+    <!-- <view class="tab">
+      <block wx:for="{{['全部','周边','国内','境外']}}" wx:key="id">
+        <view class="tab_item {{currentTabIndex == index? 'selected' : ''}}" bindtap='onTabItemTap' data-index='{{index}}'>
+          {{item}}
+        </view>
+      </block>
+    </view> -->
+    <!--endfor tab-->
+    <view class="item_detail">
+    <!-- 第一个 -->
+      <view hidden="{{currentTabIndex != 0}}">
+        <block wx:for="{{list}}" wx:key="*this">
+        <navigator url="/pages/productDetails/productDetails?id={{item.goods_id}}" open-type="navigate">
+        <view class="row">
+          <view class="img">
+            <image src="{{host+item.original_img}}"></image>
+            <!-- <view>上海</view> -->
+          </view>
+          <view class="col">
+            <text class="font1">{{item.goods_name}}</text>
+            <view class="vip">
+              <view>
+                <image src="/images/vip.png"></image>
+                年卡专享
+              </view>
+            </view>
+            <view class="bg">
+              <view>
+                <text class="font2"> <text>￥{{item.shop_price}}</text>  起</text>
+                <!-- <text class="font3">原价{{item.shop_price}}</text> -->
+              </view>
+              <!-- <text class="font4">评分:{{parseFloat(item.commentStatistics.star)}}</text> -->
+            </view>
+          </view>
+        </view>
+        </navigator>
+        </block>
+      </view>  
+    </view><!--endfor item_detail-->
+  </view><!--endfor tabs-->
+
+</view><!--endfor cover-->

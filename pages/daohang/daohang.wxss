@@ -1,0 +1,53 @@
+/* pages/daohang/daohang.wxss */
+.navBar-box{
+  height: 250rpx;
+}
+.navBar{
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  margin:0 auto;
+}
+.navBody{
+  height: 120rpx;
+  width: 420rpx;
+  border-radius: 60rpx;
+  background: #fff;
+  left: 0;
+  right: 0;
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}  
+.navBody image{
+  width:60rpx ;
+  height: 60rpx;
+}
+
+.navBody .Btn{
+  border: 2rpx solid #3BA8E4;
+  border-radius: 50%;
+  height: 80rpx;
+  width: 80rpx;
+  color: #3BA8E4;
+  font-size: 50rpx;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBody .active{
+  color: #3BA8E4;
+}
+.navBody view{
+  display: flex;
+   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999999;
+  width: 33.3%;
+}

@@ -1,0 +1,119 @@
+/* pages/yearJqList/yearJqList.wxss */
+page{
+  background-color: #fff;
+}
+.s-box-1{
+  width: 96%;
+  margin: 10rpx auto;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 28rpx;
+  background-color: #F6F6F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color:#666666;
+}
+
+.se{
+  width: 36rpx;
+  margin-right: 15rpx;
+}
+
+/* 选择 */
+.xuabzhe2{
+  margin-top: 20rpx;
+}
+.xuabzhe2 .title2 {
+  width: 100%;
+  height: 88rpx;
+
+  display: flex;
+  align-items: baseline;
+  /* justify-content: space-around; */
+}
+
+.xuabzhe2 .titleSel2 {
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 0 15rpx;
+  margin-right: 10rpx;
+  border-radius: 5rpx;
+}
+.titleSel2.headerLineSel2{
+  font-size: 35rpx;
+}
+
+.headerLineSel2 .heng-1{
+  width: 50rpx;
+  height: 8rpx;
+  background-color: #3BA8E4;
+  margin-top: 10rpx;
+  border-radius: 4rpx;
+}
+
+.c-c-2 .list{
+  display: flex;
+  margin-bottom: 25rpx;
+}
+.c-c-2 .list .img{
+  border-radius: 18rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.c-c-2 .list .img image{
+  width: 250rpx;
+  height: 180rpx;
+}
+.c-c-2 .list .r{
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.c-c-2 .list .r .t1{
+  font-size: 28rpx;
+  /* height: 66rpx; */
+  line-height: 33rpx;
+  /* overflow: hidden; */
+}
+.c-c-2 .list .r .t2{
+  display: flex;
+  margin-bottom: 15rpx;
+  align-items: flex-end;
+  justify-content: space-between
+}
+.c-c-2 .list .r .t2 .l{
+  display: flex;
+  align-items: flex-end;
+
+}
+.jg{
+  font-size: 35rpx;
+  color: #F99B00;
+  margin-right: 25rpx;
+}
+.jg text{
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 5rpx;
+}
+.yj{
+  font-size: 32rpx;
+  color: #666;
+  margin-right: 25rpx;
+}
+.yj text{
+  font-size: 26rpx;
+  color: #666;
+  margin-left: 5rpx;
+}
+.pf{
+  align-self: flex-end;
+  color: #666;
+}

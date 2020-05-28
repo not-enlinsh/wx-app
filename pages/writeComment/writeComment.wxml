@@ -1,0 +1,70 @@
+<!--pages/writeComment/writeComment.wxml-->
+<view class="cover">
+  <form bindsubmit="formSubmit">
+  <view class="row1">
+    <view class="bg1">
+      <view class="img">
+        <image src="{{img}}"></image>
+        <!--需要放入景点地址变量-->
+        <view>上海</view>
+      </view>
+      <text>迪士尼乐园</text>
+    </view> <!--endfor bg1-->
+    <view class="bg2">     
+      <block wx:for="{{one_2}}" wx:key="index">
+        <image catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='/images/fullStar.png'></image>
+      </block>
+      <block wx:for="{{two_2}}" wx:key="index">
+        <image catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='/images/noStar.png'></image>
+      </block>
+      <view>{{comment}}</view><!--{{one_2}}星-->
+    </view>
+  </view><!--endfor row1-->
+
+  <view class="row2">
+    <text >写评论</text>
+    <view class="bg3"> <!--placeholder需要放入景点地址变量-->
+      <textarea wx:if="{{!showModal}}"  rows="4" placeholder="发表一下您今日游玩玩的心情和经历！" id="feedback" maxlength="100" value="{{information}}" bindinput="getDataBindTap" name="feedback"></textarea> 
+      <view wx:else>{{information}}</view>
+      <view>
+        <text id="counter">剩余字数 {{lastArea}}/100</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="row3">
+    <text >上传照片</text>
+    <view class="bg4">
+    <!-- /最多只能上传3张照片 -->
+      <view class="buimg" wx:for="{{tempFilePaths}}" wx:key="index">
+        <view class="close" bindtap="rmimg" data-key="{{index}}"><image src="/images/close.png"></image></view>
+        <image src="{{item}}"></image>
+      </view>
+      <view class="bu" bindtap="upimg" wx:if="{{tempFilePaths.length<3}}">
+        <image src="/images/camera.png"></image>
+        <text>上传照片</text>
+      </view>
+      <!-- 暂时只允许上传3张照片 -->
+    </view>
+  </view>
+
+  <view class="row4">
+    <!-- 当没有星星，评论为空时，按钮是浅色 -->
+    <button  formType="submit" class="{{saveBtn?'btnactive':''}}">发表评论</button>
+  </view>
+  </form>
+</view><!--endfor cover-->
+
+
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="modalBody">
+    <view>发表评论成功</view>
+  </view>
+  <view class="modalFooter">
+    <view class="backIndex" bindtap="ok">返回首页</view> 
+    <view class="check">查看评论</view>
+  </view>
+</view>

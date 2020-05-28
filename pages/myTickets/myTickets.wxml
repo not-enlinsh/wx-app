@@ -1,0 +1,20 @@
+<!--pages/myTickets/myTickets.wxml-->
+<view class="cover" style="padding-top:20rpx;">
+<block wx:for="{{list}}" wx:key="*this">
+  <navigator url="/pages/piao/piao?code={{item.vr_code}}" open-type="navigate">
+
+  <view class="row">
+    <image src="/images/ticketsPic.png"></image>
+    <view class="col">
+      <view class="bg">
+        <text class="font1">{{item.goods.goods_name}}</text>
+        <text class="font2">{{stype[item.vr_state]}}</text>
+      </view>
+      <text class="font3">有效期至：{{item.vr_indate}}</text>
+      <view class="font4">票价：<text>￥{{item.pay_price}}</text></view>
+    </view>
+  </view>
+  </navigator>
+
+</block>
+</view>

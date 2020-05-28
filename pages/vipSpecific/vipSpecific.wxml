@@ -1,0 +1,111 @@
+<!--pages/vipSpecific/vipSpecific.wxml-->
+<!-- 年卡会员专享 -->
+<view class="cover">
+  <view class="sear">
+    <input></input>
+  </view>
+  <view class="tabs">
+    <view class="tab">
+      <block wx:for="{{['全部','周边','国内','境外']}}" wx:key="id">
+        <view class="tab_item {{currentTabIndex == index? 'selected' : ''}}" bindtap='onTabItemTap' data-index='{{index}}'>
+          {{item}}
+        </view>
+      </block>
+    </view><!--endfor tab-->
+    <view class="item_detail">
+    <!-- 第一个 -->
+      <view hidden="{{currentTabIndex != 0}}">
+        <view class="row">
+          <view class="img">
+            <image src="/images/scenicSpot1.png"></image>
+            <view>上海</view>
+          </view>
+          <view class="col">
+            <text class="font1">快速入园上海迪士尼乐园1日/2日门票 (免排队VIP导览服务+不限时快速同行）</text>
+            <view class="bg">
+              <view>
+                <text class="font2"> <text>￥38</text> 起</text>
+                <text class="font3">原价288</text>
+              </view>
+              <text class="font4">评分4.8</text>
+            </view>
+          </view>
+        </view>
+        <view class="row">
+          <view class="img">
+            <image src="/images/scenicSpot1.png"></image>
+            <view>上海</view>
+          </view>
+          <view class="col">
+            <text class="font1">快速入园上海迪士尼乐园1日/2日门票 (免排队VIP导览服务+不限时快速同行）</text>
+            <view class="bg">
+              <view>
+                <text class="font2"> <text>￥38</text> 起</text>
+                <text class="font3">原价288</text>
+              </view>
+              <text class="font4">评分4.8</text>
+            </view>
+          </view>
+        </view>
+      </view>  
+      <!-- 第二个 -->
+      <view hidden="{{currentTabIndex != 1}}">
+        <view class="row">
+          <view class="img">
+            <image src="/images/scenicSpot1.png"></image>
+            <view>上海</view>
+          </view>
+          <view class="col">
+            <text class="font1">快速入园上海迪士尼乐园1日/2日门票 (免排队VIP导览服务+不限时快速同行）</text>
+            <view class="bg">
+              <view>
+                <text class="font2"> <text>￥38</text> 起</text>
+                <text class="font3">原价288</text>
+              </view>
+              <text class="font4">评分4.8</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 第三个 -->
+      <view hidden="{{currentTabIndex != 2}}">
+        <view class="row">
+          <view class="img">
+            <image src="/images/scenicSpot1.png"></image>
+            <view>上海</view>
+          </view>
+          <view class="col">
+            <text class="font1">快速入园上海迪士尼乐园1日/2日门票 (免排队VIP导览服务+不限时快速同行）</text>
+            <view class="bg">
+              <view>
+                <text class="font2"> <text>￥38</text> 起</text>
+                <text class="font3">原价288</text>
+              </view>
+              <text class="font4">评分4.8</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 第四个 -->
+      <view hidden="{{currentTabIndex != 3}}">
+        <view class="row">
+          <view class="img">
+            <image src="/images/scenicSpot1.png"></image>
+            <view>上海</view>
+          </view>
+          <view class="col">
+            <text class="font1">快速入园上海迪士尼乐园1日/2日门票 (免排队VIP导览服务+不限时快速同行）</text>
+            <view class="bg">
+              <view>
+                <text class="font2"> <text>￥38</text> 起</text>
+                <text class="font3">原价288</text>
+              </view>
+              <text class="font4">评分4.8</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view><!--endfor item_detail-->
+  </view><!--endfor tabs-->
+
+</view><!--endfor cover-->

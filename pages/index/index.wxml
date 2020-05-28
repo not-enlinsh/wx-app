@@ -1,0 +1,207 @@
+
+<view class="s-box">
+  <navigator url="/pages/search/search" open-type="navigate">
+    <view class="s-1"><view>上海必玩景点</view> <image src="/images/search-1.png" style="width:40rpx;height:40rpx;"></image></view>
+  </navigator>
+</view>
+<view class="cover">
+  <view class="swiper-box">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" class="swipe_container" bindchange="swiperChange" style="height:{{height}}px">
+      <block wx:for="{{banner}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{host+item.ad_code}}" class="slide-image" model="" bindload="setContainerHeight"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="bswi" style="margin-top:-{{height1}}px"><image src="{{host+banner[current].ad_code}}"></image></view>
+  </view>
+  
+  <view class="tuijian">
+    <view class="top-1">
+      <view class="l">
+        <view class="shu-1"></view>
+        <view class="name">快速了解</view>
+      </view>
+      <navigator url="/pages/search/search" open-type="navigate">
+        <view class="r">
+          <view>查看全部</view>
+          <image src="/images/to.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="c-1">
+      <block wx:for="{{tags}}" wx:key="*this">
+        <!-- <navigator url="/pages/search/search?keyWord={{item}}" open-type="navigate"> -->
+          <view class="list" bindtap="toTjxq" data-key="{{item.article_id}}">{{item.title}}</view>
+        <!-- </navigator> -->
+      </block>
+    </view>
+  </view>
+
+  <view class="nianka">
+    <view class="top-1">
+      <view class="l">
+        <view class="shu-1"></view>
+        <view class="name">VIP年卡专用</view>
+      </view>
+      <navigator url="/pages/yearJqList/yearJqList" open-type="navigate">
+        <view class="r">
+          <view>更多</view>
+          <image src="/images/to.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="c-1">
+      <scroll-view class='sv' scroll-x='true'>
+      
+        <block wx:for="{{list1}}" wx:key="*this">
+          <view class="list" bindtap="toDetails" data-id="{{item.goods_id}}">
+            <view class="t-l-1">{{item.goods_name}}</view>
+            <image src="{{host+item.original_img}}"  mode ="aspectFill" ></image>
+            <view class="b-l-1">
+              <view>{{item.address}}</view>
+              <view>{{item.goods_remark}}</view>
+            </view>
+          </view>
+        </block>
+      
+      
+      </scroll-view>
+    </view>
+  </view>
+
+    <view class="nianka">
+    <view class="top-1">
+      <view class="l">
+        <view class="shu-1"></view>
+        <view class="name">专属推荐</view>
+        <view class="tip-1">迪士尼</view>
+      </view>
+      <navigator url="/pages/tjJqList/tjJqList" open-type="navigate">
+        <view class="r">
+          <view>更多</view>
+          <image src="/images/to.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="c-2">
+      <!--Tab布局-->
+        <!-- <view class='title'>
+          <view class="titleSel {{0 == currentIndex ? 'headerLineSel' : ''}}" bindtap='titleClick' data-idx='0'>
+            <text>门票</text>
+          </view>
+          
+          <view class="titleSel {{1 == currentIndex ? 'headerLineSel' : ''}}" bindtap='titleClick' data-idx='1'>
+            <text>定制旅游</text>
+          </view>
+        </view> -->
+
+        <!--内容布局-->
+        <view  class="c-c-1" hidden="{{currentIndex != 0}}">
+          <scroll-view class='sv' scroll-x='true'>
+            <block wx:for="{{list2}}" wx:key="*this">
+
+              <view class="list" bindtap="toDetails" data-id="{{item.goods_id}}">
+                <view>
+                  <image src="{{host+item.original_img}}"  mode ="aspectFill" ></image>
+                </view>
+                <view class="title-2">{{item.goods_name}}{{item.goods_name}}{{item.goods_name}}</view>
+                <view class="jg"><view class="ss">￥{{item.shop_price}}</view>起</view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+        <view  class="c-c-1" hidden="{{currentIndex != 1}}">
+          <scroll-view class='sv' scroll-x='true'>
+            <block wx:for="{{list2}}" wx:key="*this">
+
+              <view class="list" bindtap="toDetails" data-id="{{item.goods_id}}">
+                <view>
+                  <image src="{{host+item.original_img}}"  mode ="aspectFill" ></image>
+                </view>
+                <view class="title-2">{{item.goods_name}}{{item.goods_name}}{{item.goods_name}}</view>
+                <view class="jg"><view class="ss">￥{{item.shop_price}}</view>起</view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+    </view>
+  </view>
+  <view class="xuabzhe2">
+    <view class="title2">
+      <view class="titleSel2 {{0 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='0'>
+        <text>精选</text>
+        <view class="heng-1"></view>
+      </view>
+      <view class="titleSel2 {{1 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='1'>
+        <text>周边</text>
+        <view class="heng-1"></view>
+      </view>
+      
+      <!-- <view class="titleSel2 {{2 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='2'>
+        <text>国内</text>
+        <view class="heng-1"></view>
+      </view>
+      
+      <view class="titleSel2 {{3 == currentIndex2 ? 'headerLineSel2' : ''}}" bindtap='titleClick2' data-idx='3'>
+        <text>境外</text>
+        <view class="heng-1"></view>
+      </view> -->
+    </view>
+    <view  class="c-c-2" hidden="{{currentIndex2 != 0}}">
+            <block wx:for="{{list2}}" wx:key="*this">
+
+      <view class="list" bindtap="toDetails" data-id="{{item.goods_id}}">
+        <view class="img"><image src="{{host+item.original_img}}" mode ="widthFix" ></image></view>
+        <view class="c-c-c-1">
+          <view class="tip-c-1">{{item.province}}</view>
+          
+          <view wx:if="{{item.cat_id == 1}}" class="tip-c-2">年卡专享</view>
+          <view class="tip-c-3">{{item.goods_name}}{{item.goods_name}}{{item.goods_name}}{{item.goods_name}}</view>
+          <view class="tip-c-4">
+            <view class="l">¥{{item.shop_price}}<text>起</text></view>
+            <view class="r">已售{{item.sales_sum}}</view>
+          </view>
+        </view>
+      </view>
+            </block>
+
+
+    </view>
+    <view  class="c-c-2" hidden="{{currentIndex2 != 1}}">
+      <block wx:for="{{list3}}" wx:key="*this">
+
+      <view class="list" bindtap="toDetails" data-id="{{item.goods_id}}">
+        <view class="img"><image src="{{host+item.original_img}}" mode ="widthFix" ></image></view>
+        <view class="c-c-c-1">
+          <view class="tip-c-1">{{item.province}}</view>
+          
+          <view wx:if="{{item.cat_id == 1}}" class="tip-c-2">年卡专享</view>
+          <view class="tip-c-3">{{item.goods_name}}</view>
+          <view class="tip-c-4">
+            <view class="l">¥{{item.shop_price}}<text>起</text></view>
+            <view class="r">已售{{item.sales_sum}}</view>
+          </view>
+        </view>
+      </view>
+            </block>
+
+    </view>
+    <view  class="c-c-2" hidden="{{currentIndex2 != 2}}">
+    003
+    </view>
+    <view  class="c-c-2" hidden="{{currentIndex2 != 3}}">
+    004
+    </view>
+  </view>
+</view>
+
+
+<view class="tab-bar-box"></view>
+<dialog id='dialog' 
+      title='登录提示' 
+      content='小程序需要您的授权才能提供更好的服务哦' 
+      confirmText='知道了'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>

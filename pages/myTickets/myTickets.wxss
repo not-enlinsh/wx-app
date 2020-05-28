@@ -1,0 +1,59 @@
+/* pages/myTickets/myTickets.wxss */
+.row{
+  height: 220rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0;
+}
+.row .col{
+  /* width: 100%; */
+  width: 380rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+.row image{
+  width: 264rpx;
+  height: 220rpx;
+}
+.row .bg{
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.bg .font1{
+  width: 70%;
+  font-size: 34rpx;
+  color: #3d3d3d;
+  font-weight: bold;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+   
+}
+.font4{
+  font-size: 32rpx;
+}
+.font4 text{
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.bg .font2{
+  font-size: 32rpx;
+  color:#F99B00 ;
+}
+.bg .font4{
+  font-size: 32rpx;
+  color: #3BA8E4;
+}
+.row .font3{
+  font-size: 30rpx;
+  color:#999999 ;
+  margin-bottom:10rpx;
+}

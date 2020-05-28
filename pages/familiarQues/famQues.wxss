@@ -1,0 +1,21 @@
+/* pages/familiarQues/famQues.wxss */
+.bg{
+  background-color: #fff;
+  padding: 40rpx;
+  /* padding-bottom: 30%; */
+}
+.bg .row{
+   margin: 0 0 35rpx 0;
+}
+.bg .row .ques{
+  font-size: 34rpx;
+  color: #414141;
+  letter-spacing: 2rpx;
+  padding-bottom: 4rpx;
+ 
+}
+.bg .row .ans{
+  font-size: 30rpx;
+  color: #747474;
+  margin-top: 20rpx;
+}

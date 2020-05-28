@@ -1,0 +1,27 @@
+<!--pages/bindingCard/bindingCard.wxml-->
+<form bindsubmit="formSubmit">
+<view class="cover">
+
+  <view class="bg1">
+    <input name="codehead" type="number" maxlength="4" placeholder="前四位"></input>
+    <input name="codeend" type="number" maxlength="4" placeholder="后四位"></input>
+    <button formType="submit" class="btn">绑定</button>
+  </view>
+  <view class="bg2">
+    <text>1.每个人只可以绑定一张卡</text>
+    <text>2. 如有其它问题请联系乐行万家客服</text>
+  </view>
+</view>
+</form>
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="modalBody">
+    <view>绑定年卡成功</view>
+  </view>
+  <view class="modalFooter">
+    <view class="backIndex" bindtap="ok">返回首页</view> 
+    <view class="check"  bindtap="tohis">查看年卡</view>
+  </view>
+</view>

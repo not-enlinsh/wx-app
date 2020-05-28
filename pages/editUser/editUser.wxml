@@ -1,0 +1,36 @@
+<!--pages/editUser/editUser.wxml-->
+<view class="cover">
+  <view class="t1">
+   <view class="changepic" bindtap="upImg">
+    <image src="{{tempFilePaths}}"></image>
+    <text>点击更换头像</text>
+   </view>
+  </view>
+  <form bindsubmit="formSubmit">
+  <view class="t2">
+    <text>填写信息</text>
+    <view class="f-i-infor">
+      <view class="row1">
+        <view>名称</view>
+        <input type="" name="nickname" value="{{info.nickname}}"></input>
+      </view>
+      <!-- <view class="row1">
+        <view>手机号码</view>
+        <input type="text" id="phone" value="{{info.mobile}}" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" maxlength="11" required></input>
+      </view> -->
+      <!-- <view class="row1">
+        <view>邮箱</view>
+        <input type="" value="{{info.email}}"></input>
+      </view> -->
+      <!-- <view class="row1">
+        <view>收货地址</view>
+        <input type="" value="{{info.add}}"></input>
+      </view> -->
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class="t3">
+    <button formType="submit">保存</button>
+  </view>
+  </form>
+</view>

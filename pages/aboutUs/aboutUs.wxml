@@ -1,0 +1,2 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view class="vv"><rich-text nodes="{{content}}"></rich-text></view>
